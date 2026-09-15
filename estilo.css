@@ -1,0 +1,470 @@
+/* =========================
+   LOOP E-BIKES — DARK STYLE
+   ========================= */
+
+:root {
+  --black: #08080b;
+  --dark: #111116;
+  --dark-gray: #1a1a21;
+  --gray: #2a2a33;
+  --light-gray: #a7a7b3;
+  --white: #f5f5f7;
+
+  --purple-dark: #32104d;
+  --purple: #4b176d;
+  --purple-light: #7426a0;
+
+  --border: rgba(255, 255, 255, 0.09);
+  --shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+
+  --radius: 18px;
+}
+
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+  width: 100%;
+  padding: 20px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(8, 8, 11, 0.9);
+  border-bottom: 1px solid var(--border);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  backdrop-filter: blur(12px);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: var(--purple-light);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--light-gray);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--white);
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+  min-height: 85vh;
+  padding: 100px 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+
+  background:
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(75, 23, 109, 0.35),
+      transparent 35%
+    ),
+    var(--black);
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: clamp(45px, 7vw, 85px);
+  line-height: 0.95;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: var(--purple-light);
+}
+
+.hero p {
+  color: var(--light-gray);
+  font-size: 18px;
+  margin-bottom: 35px;
+}
+
+/* =========================
+   BOTONES
+   ========================= */
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+
+  border-radius: 999px;
+  border: 1px solid var(--purple);
+
+  background: var(--purple);
+  color: var(--white);
+
+  text-decoration: none;
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--purple-light);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(116, 38, 160, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--gray);
+  margin-left: 10px;
+}
+
+.btn-outline:hover {
+  background: var(--dark-gray);
+}
+
+/* =========================
+   IMAGEN DE BICICLETA
+   ========================= */
+
+.hero-bike {
+  width: 50%;
+  max-width: 650px;
+
+  filter:
+    drop-shadow(0 25px 35px rgba(0, 0, 0, 0.7))
+    drop-shadow(0 0 35px rgba(116, 38, 160, 0.18));
+
+  transition: 0.5s;
+}
+
+.hero-bike:hover {
+  transform: scale(1.03) rotate(-1deg);
+}
+
+/* =========================
+   SECCIONES
+   ========================= */
+
+section {
+  padding: 90px 7%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: var(--light-gray);
+}
+
+/* =========================
+   CARDS DE BICICLETAS
+   ========================= */
+
+.bikes {
+  background: var(--dark);
+}
+
+.bike-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.bike-card {
+  overflow: hidden;
+
+  background: var(--dark-gray);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+
+  transition: 0.35s;
+}
+
+.bike-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(116, 38, 160, 0.5);
+}
+
+.bike-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.bike-info {
+  padding: 25px;
+}
+
+.bike-info h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.bike-info p {
+  color: var(--light-gray);
+  margin-bottom: 20px;
+}
+
+.price {
+  color: var(--purple-light);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* =========================
+   CARACTERÍSTICAS
+   ========================= */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.feature {
+  padding: 30px;
+
+  background: #101014;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  transition: 0.3s;
+}
+
+.feature:hover {
+  background: var(--purple-dark);
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 35px;
+  color: var(--purple-light);
+  margin-bottom: 15px;
+}
+
+.feature h3 {
+  margin-bottom: 10px;
+}
+
+.feature p {
+  color: var(--light-gray);
+}
+
+/* =========================
+   BANNER
+   ========================= */
+
+.banner {
+  padding: 80px 7%;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--purple-dark),
+      var(--black)
+    );
+}
+
+.banner h2 {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.banner p {
+  color: #c5c5ca;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+  padding: 40px 7%;
+
+  background: #050507;
+  border-top: 1px solid var(--border);
+
+  text-align: center;
+  color: var(--light-gray);
+}
+
+footer strong {
+  color: var(--white);
+}
+
+/* =========================
+   ANIMACIONES
+   ========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: fadeUp 0.8s ease;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 70px;
+  }
+
+  .hero-bike {
+    width: 90%;
+  }
+
+  .bike-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .features {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 18px 5%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  section {
+    padding: 65px 5%;
+  }
+
+  .hero {
+    padding: 70px 5%;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .bike-grid,
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    padding: 13px 22px;
+  }
+
+  .btn-outline {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+Imágenes de bicicletas eléctricas
+Para que combine con este diseño, usaría fotos de e-bikes negras/gris oscuro, fondos urbanos nocturnos y algún detalle morado en iluminación. Por ejemplo, en tu HTML podés poner:
+
+<img 
+  src="imagenes/loop-bike-01.jpg" 
+  alt="Bicicleta eléctrica Loop"
+  class="hero-bike"
+>
+
+Y para las cards:
+
+<div class="bike-grid">
+
+  <div class="bike-card">
+    <img src="imagenes/loop-bike-01.jpg" alt="Loop Urban">
+    <div class="bike-info">
+      <h3>Loop Urban</h3>
+      <p>Bicicleta eléctrica urbana, rápida y cómoda.</p>
+      <span class="price">$1.499</span>
+    </div>
+  </div>
+
+  <div class="bike-card">
+    <img src="imagenes/loop-bike-02.jpg" alt="Loop Pro">
+    <div class="bike-info">
+      <h3>Loop Pro</h3>
+      <p>Más potencia, autonomía y tecnología.</p>
+      <span class="price">$1.899</span>
+    </div>
+  </div>
+
+  <div class="bike-card">
+    <img src="imagenes/loop-bike-03.jpg" alt="Loop X">
+    <div class="bike-info">
+      <h3>Loop X</h3>
+      <p>Diseñada para moverte sin límites.</p>
+      <span class="price">$2.199</span>
+    </div>
+  </div>
+
+</div>
